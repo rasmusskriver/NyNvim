@@ -10,3 +10,5 @@ end
 
 -- Tilknytning af funktionen til en tastaturgenvej
 vim.api.nvim_set_keymap('n', '<leader>fp', ':lua InsertFilePath()<CR>', { noremap = true, silent = true })
+	
+	
