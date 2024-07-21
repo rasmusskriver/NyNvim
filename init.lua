@@ -35,40 +35,6 @@ end
 -- Tilknytning af funktionen til en tastaturgenvej
 vim.api.nvim_set_keymap('n', '<leader>fp', ':lua InsertCurrentFilePathToIndexMd()<CR>', { noremap = true, silent = true })
 
---
--- -- Funktion til at åbne filen under markøren
--- function OpenFileUnderCursor()
---     -- Få teksten under markøren
---     local cursor_pos = vim.api.nvim_win_get_cursor(0)
---     local line = vim.fn.getline(cursor_pos[1])
---     local col = cursor_pos[2] + 1
---     local file_path = nil
---
---     -- Find start og slut positionen af filstien under markøren
---     local start_pos, end_pos = line:find("%S+")
---     while start_pos do
---         if col >= start_pos and col <= end_pos then
---             file_path = line:sub(start_pos, end_pos)
---             break
---         end
---         start_pos, end_pos = line:find("%S+", end_pos + 1)
---     end
---
---     if file_path then
---         -- Åbn filen hvis den findes
---         if vim.fn.filereadable(file_path) == 1 then
---             vim.cmd('edit ' .. file_path)
---         else
---             print('Filen findes ikke: ' .. file_path)
---         end
---     else
---         print('Ingen filsti fundet under markøren')
---     end
--- end
---
--- -- Tilknytning af funktionen til en tastaturgenvej
--- vim.api.nvim_set_keymap('n', '<leader>gf', ':lua OpenFileUnderCursor()<CR>', { noremap = true, silent = true })
-
 
 -- Funktion til at åbne filen eller mappen under markøren
 function OpenFileOrDirUnderCursor()
@@ -108,57 +74,38 @@ end
 vim.api.nvim_set_keymap('n', '<leader>gf', ':lua OpenFileOrDirUnderCursor()<CR>', { noremap = true, silent = true })
 
 
--- -- Funktion til at ændre arbejdsbibliotek til stien under markøren
--- function CdIntoDirUnderCursor()
---     -- Få teksten under markøren
---     local cursor_pos = vim.api.nvim_win_get_cursor(0)
---     local line = vim.fn.getline(cursor_pos[1])
---     local col = cursor_pos[2] + 1
---     local path = nil
---
---     -- Find start og slut positionen af stien under markøren
---     local start_pos, end_pos = line:find("%S+")
---     while start_pos do
---         if col >= start_pos and col <= end_pos then
---             path = line:sub(start_pos, end_pos)
---             break
---         end
---         start_pos, end_pos = line:find("%S+", end_pos + 1)
---     end
---
---     if path then
---         -- Tjek om stien er en mappe
---         if vim.fn.isdirectory(path) == 1 then
---             -- Skift arbejdsbibliotek
---             vim.cmd('cd ' .. path)
---             print('Skiftede arbejdsbibliotek til: ' .. path)
---         else
---             print('Stien er ikke en mappe: ' .. path)
---         end
---     else
---         print('Ingen sti fundet under markøren')
---     end
--- end
---
--- -- Tilknytning af funktionen til en tastaturgenvej
--- vim.api.nvim_set_keymap('n', '<leader>cd', ':lua CdIntoDirUnderCursor()<CR>', { noremap = true, silent = true })
+-- Funktion til at ændre arbejdsbibliotek til mappen for den aktuelle fil eller mappen
+function CdIntoCurrentPath()
+    -- Få den fulde sti til den aktuelle fil eller mappe
+    local path = vim.fn.expand('%:p')
 
-
--- Funktion til at ændre arbejdsbibliotek til mappen for den aktuelle fil
-function CdIntoCurrentFileDir()
-    -- Få den fulde sti til den aktuelle fil
-    local file_path = vim.fn.expand('%:p')
-    -- Få mappen for den aktuelle fil
-    local dir_path = vim.fn.fnamemodify(file_path, ':h')
-
-    if vim.fn.isdirectory(dir_path) == 1 then
-        -- Skift arbejdsbibliotek
-        vim.cmd('cd ' .. dir_path)
-        print('Skiftede arbejdsbibliotek til: ' .. dir_path)
+    -- Tjek om den aktuelle sti er en mappe
+    if vim.fn.isdirectory(path) == 1 then
+        -- Skift arbejdsbibliotek til den aktuelle mappe
+        vim.cmd('cd ' .. path)
+        print('Skiftede arbejdsbibliotek til: ' .. path)
     else
-        print('Kunne ikke finde mappen for den aktuelle fil: ' .. dir_path)
+        -- Få mappen for den aktuelle fil
+        local dir_path = vim.fn.fnamemodify(path, ':h')
+        if vim.fn.isdirectory(dir_path) == 1 then
+            -- Skift arbejdsbibliotek til mappen for den aktuelle fil
+            vim.cmd('cd ' .. dir_path)
+            print('Skiftede arbejdsbibliotek til: ' .. dir_path)
+        else
+            print('Kunne ikke finde mappen for den aktuelle fil: ' .. dir_path)
+        end
     end
 end
 
 -- Tilknytning af funktionen til en tastaturgenvej
-vim.api.nvim_set_keymap('n', '<leader>cd', ':lua CdIntoCurrentFileDir()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cd', ':lua CdIntoCurrentPath()<CR>', { noremap = true, silent = true })
+
+-- Først opretter du augroup 'ThePrimeagen'
+local ThePrimeagenGroup = vim.api.nvim_create_augroup('ThePrimeagen', { clear = true })
+
+-- Tilføj autokommandoen til at fjerne trailing whitespace på gem
+vim.api.nvim_create_autocmd('BufWritePre', {
+    group = ThePrimeagenGroup,
+    pattern = '*',
+    command = [[%s/\s\+$//e]],
+})
