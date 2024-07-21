@@ -9,5 +9,3 @@
 - Linter hvad er det ? kan det noget
 
 - Tilføje funktion fra theprimagen, der fjerne mellemrum når man gemmer.
-
-
