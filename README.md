@@ -11,3 +11,5 @@
 - Tilføje funktion fra theprimagen, der fjerne mellemrum når man gemmer.
 
 - Der er en fejl i <leader>cd funktion i init.lua filen som gør den kun virker i nogle mapper
+
+
