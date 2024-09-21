@@ -1,7 +1,7 @@
--- Set leader button
+-- Set leader button SKAL VÆRE ØVERST !!!
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
--- NOTE til mig selv lav kun ny kommandoer med leader under den der DEFINERE LEADER KNAPPEN
+-- NOTE til mig selv lav kun nye kommandoer med leader under den der DEFINERE LEADER KNAPPEN
 vim.keymap.set("n", "<leader>gd", "<cmd>split<CR><cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 --Istedet for at trykke :Ex
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)

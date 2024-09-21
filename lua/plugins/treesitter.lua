@@ -6,13 +6,13 @@ return {
 		require'nvim-treesitter.configs'.setup {
 
 			ensure_installed = {
-				"vimdoc", "javascript", "typescript", "c", "lua", "rust",
+				"vimdoc", "tsx", "javascript", "typescript", "c", "lua", "rust",
 				"jsdoc", "bash", "markdown", "markdown_inline",
 			},
 			auto_install = true,
 
 			indent = {
-				enable = true
+				enable = true,
 			},
 
 			highlight = {

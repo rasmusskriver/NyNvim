@@ -8,10 +8,14 @@
 
 - Der er en fejl i <leader>cd funktion i init.lua filen som gør den kun virker i nogle mapper
 
+- lave en cloud gemt mappe der kan bruges til noter via leader ww, samt obsidian
+
 
 ## Genveje
 
-<leader>fp printer path ind i index.md som kan tilgås via leader ww
+leader fp - printer path ind i index.md som kan tilgås via leader ww
+
+leader gd - Go To Definition
 
 gc - toogle mellem kommentar
 
@@ -39,3 +43,18 @@ Makro
 q efterfulgt af et bogstav hvor den bliver gemt
 @ efterfulgt af bogstav for at afspille, evt et tal først for at gøre det flere gange
 
+### Nuværende installeret LSP i Mason (Åbenbart kan man ikke se det i config, ikke fordi jeg nogensinde glemmer det alligevel men...)
+
+  Installed
+    ◍ ast-grep ast_grep
+    ◍ css-lsp cssls
+    ◍ eslint-lsp eslint
+    ◍ eslint_d
+    ◍ html-lsp html
+    ◍ lua-language-server lua_ls
+    ◍ selene
+    ◍ shellcheck
+    ◍ shfmt
+    ◍ stylua
+    ◍ templ
+    ◍ typescript-language-server tsserver
