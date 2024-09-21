@@ -58,3 +58,6 @@ q efterfulgt af et bogstav hvor den bliver gemt
     ◍ stylua
     ◍ templ
     ◍ typescript-language-server tsserver
+
+### Nu skal der styr på det LSP show der
+-
