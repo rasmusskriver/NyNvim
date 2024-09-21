@@ -27,6 +27,21 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
+				-- "codelldb",
+				"cssls",
+				"eslint",
+				"html",
+				"jsonls",
+				-- "prettier",
+				-- "selene",
+				-- "shellcheck",
+				-- "shfmt",
+				-- "stylua",
+				"tailwindcss",
+				"taplo",
+				"ts_ls",
+				"vtsls",
+				"yamlls"
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
