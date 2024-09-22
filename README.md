@@ -60,4 +60,15 @@ q efterfulgt af et bogstav hvor den bliver gemt
     ◍ typescript-language-server tsserver
 
 ### Nu skal der styr på det LSP show der
--
+- Har fået lidt bedre overblik over LSP filen.
+Har fået installeret nogle lsp
+Men mangler stadig noget config
+Man kan åbenbart få den til at give html templates blandt andet via nvim-cmd tror jeg det var
+
+### Indent
+Fatter ikke indenting i typescript, react, jsx
+
+
+### howdy cowboy
+- Der var noget configureret i Takuya's nvim, der gjorde en OBS hvis man brugte meget j og k i stedet for faktisk at udnytte rigtige vim keys.
+- Skal nok egentligt have trænet det lidt mere, synes ikke jeg udnytter vim keys ordentligt.
