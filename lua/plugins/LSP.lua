@@ -40,7 +40,7 @@ return {
 				"tailwindcss",
 				"taplo",
 				"ts_ls",
-				"vtsls",
+				-- "vtsls",
 				"yamlls"
 			},
 			handlers = {
@@ -65,12 +65,14 @@ return {
 						}
 					}
 				end,
-				["tsserver"] = function()
+
+				["ts_ls"] = function()
 					local lspconfig = require("lspconfig")
-					lspconfig.tsserver.setup {
+					lspconfig.ts_ls.setup {
 						capabilities = capabilities,
 					}
 				end,
+
 			}
 		})
 

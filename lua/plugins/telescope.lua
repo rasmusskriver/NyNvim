@@ -18,5 +18,9 @@ return {
 		vim.keymap.set('n', '<leader>ww', function()
 			builtin.find_files { cwd = 'C:\\Users\\rasmu\\vimwiki' }
 		end)
+		-- Map <leader>sb to search for files in the Neovim data directory
+		vim.keymap.set('n', '<leader>sb', function()
+			require('telescope.builtin').find_files { cwd = 'C:\\Users\\rasmu\\AppData\\Local\\nvim-data' }
+		end, { desc = "Search files in Neovim data directory" })
 	end
 }
