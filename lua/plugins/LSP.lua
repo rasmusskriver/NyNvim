@@ -41,7 +41,8 @@ return {
 				"taplo",
 				"ts_ls",
 				-- "vtsls",
-				"yamlls"
+				"yamlls",
+				"pylsp"
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -72,6 +73,34 @@ return {
 						capabilities = capabilities,
 					}
 				end,
+				["pylsp"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.pylsp.setup {
+						settings = {
+							pylsp = {
+								plugins = {
+									pycodestyle = {
+										ignore = {'391'},
+										maxLineLength = 150
+									}
+								}
+							}
+						}
+					}
+				end,
+	--
+ -- require'lspconfig'.pylsp.setup{
+ --   settings = {
+ --     pylsp = {
+ --       plugins = {
+ --         pycodestyle = {
+ --           ignore = {'W391'},
+ --           maxLineLength = 100
+ --         }
+ --       }
+ --     }
+ --   }
+ -- }
 
 			}
 		})

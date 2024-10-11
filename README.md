@@ -13,6 +13,9 @@
 
 ## Genveje
 
+- ZZ - save and exit
+- ZQ - Not save and exit
+
 - leader fp - printer path ind i index.md som kan tilgås via leader ww
 
 - leader gd - Go To Definition
