@@ -7,7 +7,7 @@ function InsertCurrentFilePathToIndexMd()
 	-- Gemmer den fulde sti til den aktuelle fil
 	local current_file_path = vim.fn.expand('%:p')
 	-- Gemmer den fulde sti til index.md-filen
-	local index_md_path = 'C:\\Users\\rasmu\\vimwiki\\index.md'
+	local index_md_path = '~/MyWiki/index.md'
 
 	-- Tjekker om index.md-filen kan åbnes
 	local ok, err = pcall(function()
@@ -32,6 +32,8 @@ function InsertCurrentFilePathToIndexMd()
 	vim.cmd('edit ' .. current_file_path)
 end
 
+
+-- builtin.find_files { cwd = '~/mywiki' }
 -- Tilknytning af funktionen til en tastaturgenvej
 vim.api.nvim_set_keymap('n', '<leader>fp', ':lua InsertCurrentFilePathToIndexMd()<CR>', { noremap = true, silent = true })
 

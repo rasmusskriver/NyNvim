@@ -16,7 +16,7 @@ return {
 			builtin.find_files { cwd = vim.fn.stdpath 'config' }
 		end)
 		vim.keymap.set('n', '<leader>ww', function()
-			builtin.find_files { cwd = 'C:\\Users\\rasmu\\vimwiki' }
+			builtin.find_files { cwd = '~/MyWiki' }
 		end)
 		-- Map <leader>sb to search for files in the Neovim data directory
 		vim.keymap.set('n', '<leader>sb', function()
