@@ -1,14 +1,21 @@
 # ToDo
 
 - LSP opsætning(har taget den grundlæggende fra theprimagen, den ryger på todo, at gennemgå igen)
+    - Part 2 er gennemgået på denne, fatter stadig det ikke helt, men nu installere den da nogle grundlæggende plugin.
 
 - Finde de bedste LSP for JS, html og css
+    - Part 2 på denne er jeg tror jeg har landet på T3 stack, så skal have fundet de bedste til dette i stedet.
 
 - Linter hvad er det ? kan det noget
 
-- Der er en fejl i <leader>cd funktion i init.lua filen som gør den kun virker i nogle mapper
+- comment.nvim  "No jsx/tsx support. Its implementation was quite complicated."
 
+
+# DONE
 - lave en cloud gemt mappe der kan bruges til noter via leader ww, samt obsidian
+(Lavet en privat github REPO, der indeholder MyWiki)
+- Der er en fejl i <leader>cd funktion i init.lua filen som gør den kun virker i nogle mapper
+(Bruger ikke denne funktion)
 
 
 ## Genveje
@@ -45,6 +52,9 @@ Undotree
 Makro
 - q efterfulgt af et bogstav hvor den bliver gemt
 - @ efterfulgt af bogstav for at afspille, evt et tal først for at gøre det flere gange
+
+Funktioner
+- gx åbner link man står på
 
 ### Nu skal der styr på det LSP show der
 

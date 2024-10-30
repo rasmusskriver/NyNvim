@@ -42,7 +42,7 @@ return {
 				"ts_ls",
 				-- "vtsls",
 				"yamlls",
-				"pylsp"
+				-- "pylsp"
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)

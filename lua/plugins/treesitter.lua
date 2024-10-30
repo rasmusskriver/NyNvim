@@ -14,11 +14,11 @@ return {
 			indent = {
 				enable = false,
 			},
-
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = { "markdown" },
-			},
+			--
+			-- highlight = {
+			-- 	enable = true,
+			-- 	additional_vim_regex_highlighting = { "markdown" },
+			-- },
 		}
 	end
 }
