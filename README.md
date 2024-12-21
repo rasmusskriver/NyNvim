@@ -10,6 +10,8 @@
 
 - comment.nvim  "No jsx/tsx support. Its implementation was quite complicated."
 
+- TEST
+
 
 # DONE
 - lave en cloud gemt mappe der kan bruges til noter via leader ww, samt obsidian
