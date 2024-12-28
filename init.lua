@@ -5,37 +5,41 @@ require("config.lazy")
 -- Funktion til at indsætte stien til den aktuelle fil ind i index.md-filen
 function InsertCurrentFilePathToIndexMd()
   -- Gemmer den fulde sti til den aktuelle fil
-  local current_file_path = vim.fn.expand('%:p')
+  local current_file_path = vim.fn.expand("%:p")
   -- Gemmer den fulde sti til index.md-filen
-  local index_md_path = '~/MyWiki/index.md'
+  local index_md_path = "~/MyWiki/index.md"
 
   -- Tjekker om index.md-filen kan åbnes
   local ok, err = pcall(function()
     -- Åbner index.md-filen
-    vim.cmd('edit ' .. index_md_path)
+    vim.cmd("edit " .. index_md_path)
     -- Går til slutningen af filen
-    vim.cmd('normal G')
+    vim.cmd("normal G")
     -- laver ny linje
-    vim.cmd('normal o')
+    vim.cmd("normal o")
     -- Indsætter en ny linje og filstien
-    vim.api.nvim_put({ current_file_path }, 'c', true, true)
+    vim.api.nvim_put({ current_file_path }, "c", true, true)
     -- Gemmer ændringerne
-    vim.cmd('write')
+    vim.cmd("write")
   end)
 
   -- Hvis der opstår en fejl ved åbning af index.md-filen
   if not ok then
-    print('Fejl ved åbning af index.md: ' .. err)
+    print("Fejl ved åbning af index.md: " .. err)
   end
 
   -- Går tilbage til den oprindelige fil
-  vim.cmd('edit ' .. current_file_path)
+  vim.cmd("edit " .. current_file_path)
 end
 
 -- builtin.find_files { cwd = '~/mywiki' }
 -- Tilknytning af funktionen til en tastaturgenvej
-vim.api.nvim_set_keymap('n', '<leader>fp', ':lua InsertCurrentFilePathToIndexMd()<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fp",
+  ":lua InsertCurrentFilePathToIndexMd()<CR>",
+  { noremap = true, silent = true }
+)
 
 -- Funktion til at åbne filen eller mappen under markøren
 function OpenFileOrDirUnderCursor()
@@ -59,54 +63,53 @@ function OpenFileOrDirUnderCursor()
     -- Tjek om stien er en fil eller mappe
     if vim.fn.isdirectory(path) == 1 then
       -- Åbn mappen
-      vim.cmd('edit ' .. path)
+      vim.cmd("edit " .. path)
     elseif vim.fn.filereadable(path) == 1 then
       -- Åbn filen
-      vim.cmd('edit ' .. path)
+      vim.cmd("edit " .. path)
     else
-      print('Filen eller mappen findes ikke: ' .. path)
+      print("Filen eller mappen findes ikke: " .. path)
     end
   else
-    print('Ingen sti fundet under markøren')
+    print("Ingen sti fundet under markøren")
   end
 end
 
 -- Tilknytning af funktionen til en tastaturgenvej
-vim.api.nvim_set_keymap('n', '<leader>gf', ':lua OpenFileOrDirUnderCursor()<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap("n", "<leader>gf", ":lua OpenFileOrDirUnderCursor()<CR>", { noremap = true, silent = true })
 
 -- Funktion til at ændre arbejdsbibliotek til mappen for den aktuelle fil eller mappen
 function CdIntoCurrentPath()
   -- Få den fulde sti til den aktuelle fil eller mappe
-  local path = vim.fn.expand('%:p')
+  local path = vim.fn.expand("%:p")
 
   -- Tjek om den aktuelle sti er en mappe
   if vim.fn.isdirectory(path) == 1 then
     -- Skift arbejdsbibliotek til den aktuelle mappe
-    vim.cmd('cd ' .. path)
-    print('Skiftede arbejdsbibliotek til: ' .. path)
+    vim.cmd("cd " .. path)
+    print("Skiftede arbejdsbibliotek til: " .. path)
   else
     -- Få mappen for den aktuelle fil
-    local dir_path = vim.fn.fnamemodify(path, ':h')
+    local dir_path = vim.fn.fnamemodify(path, ":h")
     if vim.fn.isdirectory(dir_path) == 1 then
       -- Skift arbejdsbibliotek til mappen for den aktuelle fil
-      vim.cmd('cd ' .. dir_path)
-      print('Skiftede arbejdsbibliotek til: ' .. dir_path)
+      vim.cmd("cd " .. dir_path)
+      print("Skiftede arbejdsbibliotek til: " .. dir_path)
     else
-      print('Kunne ikke finde mappen for den aktuelle fil: ' .. dir_path)
+      print("Kunne ikke finde mappen for den aktuelle fil: " .. dir_path)
     end
   end
 end
 
 -- Tilknytning af funktionen til en tastaturgenvej
-vim.api.nvim_set_keymap('n', '<leader>cd', ':lua CdIntoCurrentPath()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cd", ":lua CdIntoCurrentPath()<CR>", { noremap = true, silent = true })
 
 -- Først opretter du augroup 'ThePrimeagen'
-local ThePrimeagenGroup = vim.api.nvim_create_augroup('ThePrimeagen', { clear = true })
+local ThePrimeagenGroup = vim.api.nvim_create_augroup("ThePrimeagen", { clear = true })
 
 -- Tilføj autokommandoen til at fjerne trailing whitespace på gem
-vim.api.nvim_create_autocmd('BufWritePre', {
+vim.api.nvim_create_autocmd("BufWritePre", {
   group = ThePrimeagenGroup,
-  pattern = '*',
+  pattern = "*",
   command = [[%s/\s\+$//e]],
 })
