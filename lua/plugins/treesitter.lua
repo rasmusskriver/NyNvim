@@ -12,13 +12,13 @@ return {
 			auto_install = true,
 
 			indent = {
-				enable = true,
+				enable = false,
 			},
-
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = { "markdown" },
-			},
+			--
+			-- highlight = {
+			-- 	enable = true,
+			-- 	additional_vim_regex_highlighting = { "markdown" },
+			-- },
 		}
 	end
 }
