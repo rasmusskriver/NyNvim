@@ -1,22 +1,19 @@
 # ToDo
 
-- LSP opsætning(har taget den grundlæggende fra theprimagen, den ryger på todo, at gennemgå igen)
-    - Part 2 er gennemgået på denne, fatter stadig det ikke helt, men nu installere den da nogle grundlæggende plugin.
-
-- Finde de bedste LSP for JS, html og css
-    - Part 2 på denne er jeg tror jeg har landet på T3 stack, så skal have fundet de bedste til dette i stedet.
-
-- Linter hvad er det ? kan det noget
+- Linter mangler og blive sat op, der er et modul fra i kickstart, men vil måske lave mit eget.
+linting er information og regler der bliver highligted i forhold til hvis der nogle måde funktion skal navngives etc.
 
 - comment.nvim  "No jsx/tsx support. Its implementation was quite complicated."
-
-- TEST
 
 # DONE
 - lave en cloud gemt mappe der kan bruges til noter via leader ww, samt obsidian
 (Lavet en privat github REPO, der indeholder MyWiki)
 - Der er en fejl i <leader>cd funktion i init.lua filen som gør den kun virker i nogle mapper
 (Bruger ikke denne funktion)
+- Har fikset LSP ved at indsætte moduler fra kickstart nvim
+https://github.com/dam9000/kickstart-modular.nvim/tree/master/lua/kickstart/plugins
+
+
 
 
 ## Genveje
