@@ -12,9 +12,6 @@
 
 - TEST
 
-- Test 1
-
-
 # DONE
 - lave en cloud gemt mappe der kan bruges til noter via leader ww, samt obsidian
 (Lavet en privat github REPO, der indeholder MyWiki)
