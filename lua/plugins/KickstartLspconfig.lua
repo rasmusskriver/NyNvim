@@ -211,8 +211,27 @@ return {
         -- Min egen slut
 
         -- clangd = {},
-        -- gopls = {},
+        --
+        --
+        --
+        --
+        -- pyright = {
+        --   settings = {
+        --     python = {
+        --       venv = "/home/rasmus/Projekter/MetaDataFilmPython/venv",
+        --       venvPath = "/home/rasmus/Projekter/MetaDataFilmPython", -- Angiv stien til mappen, der indeholder 'venv'
+        --     },
+        --   },
+        -- },
         pyright = {},
+        -- pyright = {
+        --   settings = {
+        --     python = {
+        --       pythonPath = vim.fn.getenv("VIRTUAL_ENV") and vim.fn.getenv("VIRTUAL_ENV") .. "/bin/python" or "python",
+        --     },
+        --   },
+        -- },
+        -- gopls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -221,6 +240,7 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
+        tailwindcss = {},
         --
 
         lua_ls = {
