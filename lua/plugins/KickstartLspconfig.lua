@@ -205,7 +205,7 @@ return {
         -- - `root_dir` source (use "gF" to visit): [../lua/lspconfig/configs/asm_lsp.lua:4](../lua/lspconfig/configs/asm_lsp.lua#L4)
         --
 
-        asm_lsp = {},
+        -- asm_lsp = {},
 
         --
         -- Min egen slut
@@ -279,8 +279,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         "stylua", -- Used to format Lua code
-        "isort",
-        "black",
+        -- "isort",
+        -- "black",
         "prettierd",
         "prettier",
       })
