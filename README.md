@@ -1,20 +1,20 @@
 # ToDo
 
 - Linter mangler og blive sat op, der er et modul fra i kickstart, men vil måske lave mit eget.
-linting er information og regler der bliver highligted i forhold til hvis der nogle måde funktion skal navngives etc.
+  linting er information og regler der bliver highligted i forhold til hvis der nogle måde funktion skal navngives etc.
 
-- comment.nvim  "No jsx/tsx support. Its implementation was quite complicated."
+- comment.nvim "No jsx/tsx support. Its implementation was quite complicated."
+
+- prøv den officielle copilot nvim. https://github.com/github/copilot.vim
 
 # DONE
+
 - lave en cloud gemt mappe der kan bruges til noter via leader ww, samt obsidian
-(Lavet en privat github REPO, der indeholder MyWiki)
+  (Lavet en privat github REPO, der indeholder MyWiki)
 - Der er en fejl i <leader>cd funktion i init.lua filen som gør den kun virker i nogle mapper
-(Bruger ikke denne funktion)
+  (Bruger ikke denne funktion)
 - Har fikset LSP ved at indsætte moduler fra kickstart nvim
-https://github.com/dam9000/kickstart-modular.nvim/tree/master/lua/kickstart/plugins
-
-
-
+  https://github.com/dam9000/kickstart-modular.nvim/tree/master/lua/kickstart/plugins
 
 ## Genveje
 
@@ -32,10 +32,12 @@ https://github.com/dam9000/kickstart-modular.nvim/tree/master/lua/kickstart/plug
 - leader pf - fuzzy find working directory
 
 --Hurtigere op og ned i et dokument
+
 - ctrl + d
 - ctrl + u
 
 -- Haarpoon
+
 - ctrl + t - Nummer 2
 - ctrl + h - Nummer 1
 - ctrl + n - Nummer 3
@@ -44,14 +46,17 @@ https://github.com/dam9000/kickstart-modular.nvim/tree/master/lua/kickstart/plug
 - ctrl + e - åben oversigt over filer
 
 Undotree
+
 - leader + u
 - ctrl + w og bagefter hjkl for at vælge vindue
 
 Makro
+
 - q efterfulgt af et bogstav hvor den bliver gemt
 - @ efterfulgt af bogstav for at afspille, evt et tal først for at gøre det flere gange
 
 Funktioner
+
 - gx åbner link man står på
 
 ### Nu skal der styr på det LSP show der
@@ -64,7 +69,6 @@ Funktioner
 ### Indent
 
 - Fatter ikke indenting i typescript, react, jsx
-
 
 ### Howdy cowboy
 

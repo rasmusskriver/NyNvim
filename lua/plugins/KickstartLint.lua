@@ -12,7 +12,7 @@ return {
         javascriptreact = { "eslint_d" }, -- Hvis du bruger React
         typescript = { "eslint_d" }, -- Hvis du bruger TypeScript
         typescriptreact = { "eslint_d" }, -- Hvis du bruger TypeScript med React
-        python = { "pylint" },
+        -- python = { "pylint" },
         -- python = { "flake8" },
         -- python = { "eslint_d" },
       }

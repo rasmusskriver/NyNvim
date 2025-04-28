@@ -48,6 +48,7 @@ return {
         html = { "prettier" },
         json = { "prettier" },
         css = { "prettier" },
+        go = { "goimports" },
       },
     },
   },
