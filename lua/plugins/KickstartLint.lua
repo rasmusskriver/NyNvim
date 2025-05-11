@@ -8,7 +8,7 @@ return {
       lint.linters_by_ft = {
         -- markdown = { "markdownlint" },
         -- markdown = { "vale" },
-        javascript = { "eslint_d" }, -- Tilføj ESLint for JavaScript
+        -- javascript = { "eslint_d" }, -- Tilføj ESLint for JavaScript
         javascriptreact = { "eslint_d" }, -- Hvis du bruger React
         typescript = { "eslint_d" }, -- Hvis du bruger TypeScript
         typescriptreact = { "eslint_d" }, -- Hvis du bruger TypeScript med React
