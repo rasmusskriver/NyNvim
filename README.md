@@ -1,5 +1,7 @@
 # ToDo
 
+- test
+
 - Linter mangler og blive sat op, der er et modul fra i kickstart, men vil måske lave mit eget.
   linting er information og regler der bliver highligted i forhold til hvis der nogle måde funktion skal navngives etc.
 
