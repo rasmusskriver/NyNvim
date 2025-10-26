@@ -35,7 +35,8 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         -- Conform can also run multiple formatters sequentially
-        python = { "isort", "black" },
+        -- python = { "isort", "black" },
+        python = { "isort", "black120" },
         -- python = { "isort" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
@@ -49,6 +50,15 @@ return {
         json = { "prettier" },
         css = { "prettier" },
         go = { "goimports" },
+      },
+
+      -- Custom formatters
+      formatters = {
+        black120 = {
+          command = "black",
+          args = { "--line-length", "120", "-" }, -- "-" for stdin
+          stdin = true,
+        },
       },
     },
   },

@@ -89,7 +89,21 @@ return {
         gopls = {},
         -- rust_analyzer = {},
         ts_ls = {},
-        tailwindcss = {},
+
+        tailwindcss = {
+          filetypes = {
+            "html",
+            "css",
+          },
+          settings = {
+            tailwindCSS = {
+              includeLanguages = {
+                plaintext = "html",
+              },
+            },
+          },
+        },
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },

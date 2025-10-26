@@ -18,6 +18,7 @@ return {
     vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
     vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
     vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+    vim.keymap.set("n", "<leader>sa", builtin.current_buffer_fuzzy_find, {})
     -- vim.keymap.set("n", "<leader>sn", function()
     --   builtin.find_files({ cwd = vim.fn.stdpath("config") })
     -- end)

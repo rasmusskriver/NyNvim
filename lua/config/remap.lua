@@ -1,8 +1,17 @@
+-- Test
+-- vim.keymap.del("n", ".")
+vim.keymap.set("n", ".", "<Nop>")
+--
 -- Set leader button SKAL VÆRE ØVERST !!!
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 -- NOTE til mig selv lav kun nye kommandoer med leader under den der DEFINERE LEADER KNAPPEN
-vim.keymap.set("n", "<leader>gd", "<cmd>split<CR><cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>gd",
+  "<cmd>split<CR><cmd>lua vim.lsp.buf.definition()<CR>",
+  { noremap = true, silent = true }
+)
 --Istedet for at trykke :Ex
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 --Markere og flyttet tekst op og ned
@@ -16,6 +25,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.clipboard = "unnamedplus"
+
+-- vim.keymap.set("n", "<leader>p", '"+p')
 
 vim.opt.undofile = true
 
@@ -44,3 +55,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- vim.opt.cursorline = true
 -- Netrw settings
 vim.g.netrw_banner = 0
+
+-- Til at teste hurtigt
+-- vim.keymap.set("n", "<leader>t", ":!python test.py<CR>")
+
+vim.keymap.set("n", "<leader>t", function()
+  local output = vim.fn.system("python test.py")
+  print(output)
+end)
