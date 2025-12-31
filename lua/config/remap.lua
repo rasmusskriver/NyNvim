@@ -59,7 +59,12 @@ vim.g.netrw_banner = 0
 -- Til at teste hurtigt
 -- vim.keymap.set("n", "<leader>t", ":!python test.py<CR>")
 
-vim.keymap.set("n", "<leader>t", function()
-  local output = vim.fn.system("python test.py")
-  print(output)
-end)
+-- vim.keymap.set("n", "<leader>t", function()
+--   local output = vim.fn.system("python test.py")
+--   print(output)
+-- end)
+--
+-- vim.keymap.set("n", "<leader>t", function()
+--   local output = vim.fn.system("uv run 2025/1/Day1.py")
+--   print(output)
+-- end)
