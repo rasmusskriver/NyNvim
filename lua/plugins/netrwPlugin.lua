@@ -1,1 +1,1 @@
-return { 'prichrd/netrw.nvim', enabled = true, opts = {} }
+return { 'prichrd/netrw.nvim', enabled = false, opts = {} }

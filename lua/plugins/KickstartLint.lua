@@ -2,7 +2,7 @@ return {
 
   { -- Linting
     "mfussenegger/nvim-lint",
-    enabled = false,
+    enabled = true,
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lint = require("lint")

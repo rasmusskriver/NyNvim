@@ -1,13 +1,25 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   enabled = true,
+  branch = "master",
+  lazt = false,
   build = ":TSUpdate",
   config = function()
-    require 'nvim-treesitter.configs'.setup {
+    require("nvim-treesitter.configs").setup({
 
       ensure_installed = {
-        "vimdoc", "tsx", "javascript", "typescript", "c", "lua", "rust",
-        "jsdoc", "bash", "markdown", "markdown_inline", "latex"
+        "vimdoc",
+        "tsx",
+        "javascript",
+        "typescript",
+        "c",
+        "lua",
+        "rust",
+        "jsdoc",
+        "bash",
+        "markdown",
+        "markdown_inline",
+        "latex",
       },
       auto_install = true,
 
@@ -19,6 +31,6 @@ return {
         enable = true,
         additional_vim_regex_highlighting = { "markdown" },
       },
-    }
-  end
+    })
+  end,
 }
