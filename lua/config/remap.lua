@@ -34,6 +34,12 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- vim.keymap.set("n", "<leader>r", "<cmd>vsplit | terminal ./main.sh<CR>", { noremap = true, silent = true })
+
+-- vim.keymap.set("n", "<leader>r", function()
+--   Snacks.terminal(nil, { win = { position = "left" } })
+-- end, { desc = "Terminal left" })
+
 -- Fejlen er her
 -- vim.g.netrw_banner = 0
 -- Fejlen er her
