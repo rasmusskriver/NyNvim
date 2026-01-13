@@ -1,38 +1,24 @@
 return {
   {
     "folke/snacks.nvim",
-    enabled = false,
+    enabled = true,
     priority = 1000,
     lazy = false,
     ---@type snacks.Config
-    opts = {
-      terminal = {
-        enabled = true,
-        interactive = false,
-        win = {
-          style = "terminal",
-          position = "float",
-          enter = true,
-        },
-      },
-      lazygit = {
-        configure = true,
-        interactive = true,
-      },
-    },
     keys = {
-      {
-        "<leader>r",
-        function()
-          Snacks.terminal("./main.sh")
-        end,
-      },
       {
         "<leader>lg",
         function()
-          Snacks.lazygit()
+          require("snacks").lazygit()
         end,
         desc = "Lazygit",
+      },
+      {
+        "<leader>gl",
+        function()
+          require("snacks").lazygit.log()
+        end,
+        desc = "Lazygit Logs",
       },
     },
   },
