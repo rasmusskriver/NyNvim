@@ -19,7 +19,6 @@ return {
         "bash",
         "markdown",
         "markdown_inline",
-        "latex",
       },
       auto_install = true,
 
