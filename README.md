@@ -1,6 +1,8 @@
-# OBS arch linux installation af npm
+# OBS arch linux installation af npm samt unzip
 
 https://nodejs.org/en/download
+
+husk også unzip..
 
 # ToDo
 
